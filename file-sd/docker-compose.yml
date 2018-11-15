@@ -1,0 +1,25 @@
+version: '3.2'
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+    - 9090:9090
+    command:
+    - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+    - ./prometheus:/etc/prometheus:ro
+  myservice1: &myservice
+    build:
+      context: myservice
+      args:
+        goPackage: github.com/lucperkins/prometheus-playground/file-sd/myservice
+    environment:
+    - PORT=1234
+    ports:
+    - 1234:1234
+  myservice2:
+    << : *myservice
+    environment:
+    - PORT=4321
+    ports:
+    - 4321:4321

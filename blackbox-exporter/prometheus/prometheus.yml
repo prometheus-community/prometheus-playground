@@ -1,0 +1,22 @@
+scrape_configs:
+- job_name: prometheus
+  scrape_interval: 5s
+  static_configs:
+  - targets:
+    - prometheus:9090
+- job_name: blackbox
+  metrics_path: /probe
+  scrape_interval: 5s
+  params:
+    module: [http_2xx]
+  static_configs:
+  - targets:
+    - prometheus:9090
+    - web:2112/health
+  relabel_configs:
+  - source_labels: [__address__]
+    target_label: __param_target
+  - source_labels: [__param_target]
+    target_label: instance
+  - target_label: __address__
+    replacement: blackbox:9115
