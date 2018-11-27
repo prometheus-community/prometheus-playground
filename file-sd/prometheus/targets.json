@@ -1,0 +1,12 @@
+[
+  {
+    "targets": [
+      "myservice1:1234",
+      "myservice2:4321"
+    ],
+    "labels": {
+      "env": "development",
+      "job": "myservice"
+    }
+  }
+]

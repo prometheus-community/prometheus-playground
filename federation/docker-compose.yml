@@ -1,0 +1,32 @@
+version: '3.2'
+services:
+  prometheus1:
+    image: prom/prometheus:latest
+    ports:
+    - 9090:9090
+    command:
+    - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+  prometheus2:
+    image: prom/prometheus:latest
+    ports:
+    - 9091:9091
+    command:
+    - --config.file=/etc/prometheus/prometheus.yml
+    - --web.listen-address=0.0.0.0:9091
+    volumes:
+    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+  prometheus3:
+    image: prom/prometheus:latest
+    ports:
+    - 9092:9092
+    command:
+    - --config.file=/etc/prometheus/prometheus.yml
+    - --web.listen-address=0.0.0.0:9092
+    volumes:
+    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+  node_exporter:
+    image: prom/node-exporter:latest
+    ports:
+    - 9100:9100
