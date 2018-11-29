@@ -1,15 +1,13 @@
-FROM golang:1.10 AS builder
-
 # Args
+ARG goVersion
 ARG goPackage
 
-# Get Dep
-RUN go get -u github.com/golang/dep/cmd/dep
+FROM golang:${goVersion} AS builder
 
 # Copy the code from the host and compile it
-WORKDIR $GOPATH/src/${goPackage}
+WORKDIR /home
 COPY . ./
-RUN dep ensure --vendor-only
+RUN go mod vendor
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app .
 
 FROM scratch
