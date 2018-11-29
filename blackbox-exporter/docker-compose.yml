@@ -24,9 +24,10 @@ services:
     build:
       context: web
       args:
-        goPackage: github.com/lucperkins/prometheus-playground/blackbox-exporter/web
+        goPackage: github.com/prometheus-community/prometheus-playground/blackbox-exporter/web
+        goVersion: 1.11
       cache_from:
-      - golang:1.10
+      - golang:1.11
       - scratch
     ports:
     - 2112:2112

@@ -25,9 +25,10 @@ services:
     build:
       context: hello
       args:
-        goPackage: github.com/lucperkins/prometheus-playground/alertmanager/hello
+        goPackage: github.com/prometheus-community/prometheus-playground/alertmanager/hello
+        goVersion: 1.11
       cache_from:
-      - golang:1.10
+      - golang:1.11
       - scratch
     ports:
     - 2112:2112
@@ -35,9 +36,10 @@ services:
     build:
       context: webhook
       args:
-        goPackage: github.com/lucperkins/prometheus-playground/alertmanager/webhook
+        goPackage: github.com/prometheus-community/prometheus-playground/alertmanager/webhook
+        goVersion: 1.11
       cache_from:
-      - golang:1.10
+      - golang:1.11
       - scratch
     ports:
     - 5001:5001
