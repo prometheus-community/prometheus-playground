@@ -4,7 +4,7 @@ services:
     build:
       context: myapp
       args:
-        goPackage: github.com/lucperkins/prometheus-playground/go-app/myapp
+        goPackage: github.com/prometheus-community/prometheus-playground/go-app/myapp
       cache_from:
       - golang:1.10
       - scratch

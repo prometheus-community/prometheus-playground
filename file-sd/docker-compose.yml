@@ -12,7 +12,7 @@ services:
     build:
       context: myservice
       args:
-        goPackage: github.com/lucperkins/prometheus-playground/file-sd/myservice
+        goPackage: github.com/prometheus-community/prometheus-playground/file-sd/myservice
     environment:
     - PORT=1234
     ports:
