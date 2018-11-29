@@ -1,11 +1,11 @@
 version: '3.2'
 services:
   node_exporter:
-    image: prom/node-exporter:latest
+    image: prom/node-exporter:${NODE_EXPORTER_TAG}
     ports:
     - 9100:9100
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:${PROMETHEUS_TAG}
     ports:
     - 9090:9090
     command:

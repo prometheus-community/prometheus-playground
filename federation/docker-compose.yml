@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   prometheus1:
-    image: prom/prometheus:latest
+    image: prom/prometheus:${PROMETHEUS_TAG}
     ports:
     - 9090:9090
     command:
@@ -9,7 +9,7 @@ services:
     volumes:
     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
   prometheus2:
-    image: prom/prometheus:latest
+    image: prom/prometheus:${PROMETHEUS_TAG}
     ports:
     - 9091:9091
     command:
@@ -18,7 +18,7 @@ services:
     volumes:
     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
   prometheus3:
-    image: prom/prometheus:latest
+    image: prom/prometheus:${PROMETHEUS_TAG}
     ports:
     - 9092:9092
     command:
@@ -27,6 +27,6 @@ services:
     volumes:
     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
   node_exporter:
-    image: prom/node-exporter:latest
+    image: prom/node-exporter:${NODE_EXPORTER_TAG}
     ports:
     - 9100:9100

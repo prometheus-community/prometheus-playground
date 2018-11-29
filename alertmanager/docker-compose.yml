@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   alertmanager:
-    image: prom/alertmanager:latest
+    image: prom/alertmanager:${ALERTMANAGER_TAG}
     ports:
     - 9093:9093
     command:
@@ -9,7 +9,7 @@ services:
     volumes:
     - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:${PROMETHEUS_TAG}
     ports:
     - 9090:9090
     command:

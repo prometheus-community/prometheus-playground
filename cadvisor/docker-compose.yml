@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:${PROMETHEUS_TAG}
     ports:
     - 9090:9090
     command:
@@ -13,7 +13,7 @@ services:
     depends_on:
     - cadvisor
   cadvisor:
-    image: google/cadvisor:latest
+    image: google/cadvisor:${CADVISOR_TAG}
     ports:
     - 8080:8080
     volumes:
@@ -24,6 +24,6 @@ services:
     depends_on:
     - redis
   redis:
-    image: redis:alpine
+    image: redis:${REDIS_TAG}
     ports:
     - 6379:6379

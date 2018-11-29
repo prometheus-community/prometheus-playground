@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   nginx:
-    image: nginx:latest
+    image: nginx:${NGINX_TAG}
     volumes:
     - ./nginx:/etc/nginx:ro
     - ./certs:/root/certs/example.com
@@ -12,7 +12,7 @@ services:
     depends_on:
     - prometheus
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:${PROMETHEUS_TAG}
     ports:
     - 9090:9090
     command:
