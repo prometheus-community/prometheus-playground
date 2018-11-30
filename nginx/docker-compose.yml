@@ -16,7 +16,6 @@ services:
     ports:
     - 9090:9090
     command:
-    - --config.file=/etc/prometheus/prometheus.yml
     - --web.route-prefix=/
     - --web.external-url=http://example.com/prometheus
     volumes:
