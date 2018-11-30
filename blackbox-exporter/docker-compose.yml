@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   blackbox:
-    image: prom/blackbox-exporter:latest
+    image: prom/blackbox-exporter:${BLACKBOX_EXPORTER_TAG}
     ports:
     - 9115:9115
     command:
@@ -11,7 +11,7 @@ services:
     depends_on:
     - web
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:${PROMETHEUS_TAG}
     ports:
     - 9090:9090
     command:

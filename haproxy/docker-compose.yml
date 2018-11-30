@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   haproxy:
-    image: haproxy:alpine
+    image: haproxy:${HAPROXY_TAG}
     ports:
     - 443:443
     volumes:
@@ -10,7 +10,7 @@ services:
     depends_on:
     - prometheus
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:${PROMETHEUS_TAG}
     expose:
     - 9090
     command:

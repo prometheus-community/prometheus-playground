@@ -1,0 +1,18 @@
+PROMETHEUS_TAG        = v2.5.0
+ALERTMANAGER_TAG      = v0.15.3
+BLACKBOX_EXPORTER_TAG = v0.12.0
+CADVISOR_TAG          = v0.32.0
+NODE_EXPORTER_TAG     = v0.16.0
+HAPROXY_TAG           = 1.8
+NGINX_TAG             = 1.15.7-alpine
+REDIS_TAG             = 5-alpine3.8
+
+export PROMETHEUS_TAG
+export ALERTMANAGER_TAG
+export BLACKBOX_EXPORTER_TAG
+export CADVISOR_TAG
+export NODE_EXPORTER_TAG
+export HAPROXY_TAG
+export NGINX_TAG
+export REDIS_TAG
+
