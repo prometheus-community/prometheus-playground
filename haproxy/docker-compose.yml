@@ -14,6 +14,7 @@ services:
     expose:
     - 9090
     command:
+    - --config.file=/etc/prometheus/prometheus.yml
     - --web.route-prefix=/prometheus
     - --web.external-url=http://example.com
     volumes:
