@@ -4,6 +4,8 @@ services:
     image: prom/prometheus:${PROMETHEUS_TAG}
     ports:
     - 9090:9090
+    command:
+    - --config.file=/etc/prometheus/prometheus.yml
     volumes:
     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
   prometheus2:
@@ -11,6 +13,7 @@ services:
     ports:
     - 9091:9091
     command:
+    - --config.file=/etc/prometheus/prometheus.yml
     - --web.listen-address=0.0.0.0:9091
     volumes:
     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro

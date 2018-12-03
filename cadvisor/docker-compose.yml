@@ -4,6 +4,8 @@ services:
     image: prom/prometheus:${PROMETHEUS_TAG}
     ports:
     - 9090:9090
+    command:
+    - --config.file=/etc/prometheus/prometheus.yml
     volumes:
     - ./prometheus:/etc/prometheus
     links:
