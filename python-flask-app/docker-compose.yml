@@ -1,0 +1,17 @@
+version: '3.2'
+services:
+  prometheus:
+    image: prom/prometheus:${PROMETHEUS_TAG}
+    ports:
+    - 9090:9090
+    command:
+    - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+    - ./prometheus:/etc/prometheus:ro
+  myapp:
+    build:
+      context: myapp
+      cache_from:
+      - python:3.7.0-alpine3.8
+    ports:
+    - 5000:5000
