@@ -1,6 +1,6 @@
-# Instrumented Go application
+# Instrumented Python Flask application
 
-In this sandbox, a Prometheus intance scrapes metrics from a simple Python [Flask](http://flask.pocoo.org/) web application.
+In this sandbox, a Prometheus instance scrapes metrics from a simple Python [Flask](http://flask.pocoo.org/) web application.
 
 ## Usage
 
@@ -40,7 +40,7 @@ curl localhost:5000/metrics | grep myapp_request_count_total
 myapp_request_count_total{endpoint="/metrics",method="GET",status="200"} 17.0
 ```
 
-Here are some example metrics to expore in the Prometheus [expression browser](https://prometheus.io/docs/visualization/browser):
+Here are some example metrics to explore in the Prometheus [expression browser](https://prometheus.io/docs/visualization/browser):
 
 * [`myapp_request_count_total{endpoint="/test-endpoint"}`](http://localhost:9090/graph?g0.range_input=1h&g0.expr=myapp_request_count_total%7Bendpoint%3D%22%2Ftest-endpoint%22%7D&g0)
 * [`myapp_request_latency_seconds_bucket{endpoint="/test-endpoint",le="0.1"}`](http://localhost:9090/graph?g0.range_input=1h&g0.expr=myapp_request_latency_seconds_bucket%7Bendpoint%3D%22%2Ftest-endpoint%22%2Cle%3D%220.1%22%7D&g0)
