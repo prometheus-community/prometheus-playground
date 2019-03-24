@@ -6,4 +6,3 @@ run-detached:
 
 kill:
 	docker-compose kill
-	
