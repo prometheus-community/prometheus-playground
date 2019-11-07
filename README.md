@@ -21,4 +21,4 @@ Directory | Scenario
 [`haproxy`](./haproxy) | Prometheus runs behind [HAProxy](https://haproxy.org/), which acts as a reverse proxy and provides basic auth and TLS encryption
 [`nginx`](./nginx) | Prometheus runs behind [nginx](https://nginx.org), which acts as a reverse proxy and provides basic auth and TLS encryption
 [`node-exporter`](./node-exporter) | Prometheus scrapes Linux host metrics from a [Node Exporter](https://prometheus.io/docs/guides/node-exporter/)
-[`python-flask-app](./python-flask-app) | An instrumented [Flask](https://flask.pocoo.org) application demonstrating the Prometheus [Python client](https://github.com/prometheus/client_python)
+[`python-flask-app`](./python-flask-app) | An instrumented [Flask](https://flask.pocoo.org) application demonstrating the Prometheus [Python client](https://github.com/prometheus/client_python)
