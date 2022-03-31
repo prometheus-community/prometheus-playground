@@ -13,7 +13,7 @@ services:
     depends_on:
     - cadvisor
   cadvisor:
-    image: google/cadvisor:${CADVISOR_TAG}
+    image: gcr.io/cadvisor/cadvisor:${CADVISOR_TAG}
     ports:
     - 8080:8080
     volumes:
