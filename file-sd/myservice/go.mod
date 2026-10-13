@@ -1,11 +1,15 @@
 module github.com/prometheus-community/prometheus-playground/file-sd/myservice
 
+require github.com/prometheus/client_golang v1.11.1
+
 require (
-	github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973
-	github.com/golang/protobuf v1.1.0
-	github.com/matttproud/golang_protobuf_extensions v1.0.1
-	github.com/prometheus/client_golang v0.0.0-20180713201052-bcbbc08eb2dd
-	github.com/prometheus/client_model v0.0.0-20180712105110-5c3871d89910
-	github.com/prometheus/common v0.0.0-20180518154759-7600349dcfe1
-	github.com/prometheus/procfs v0.0.0-20180725123919-05ee40e3a273
+	github.com/beorn7/perks v1.0.1 // indirect
+	github.com/cespare/xxhash/v2 v2.1.1 // indirect
+	github.com/golang/protobuf v1.4.3 // indirect
+	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
+	github.com/prometheus/client_model v0.2.0 // indirect
+	github.com/prometheus/common v0.26.0 // indirect
+	github.com/prometheus/procfs v0.6.0 // indirect
+	golang.org/x/sys v0.0.0-20210603081109-ebe580a85c40 // indirect
+	google.golang.org/protobuf v1.26.0-rc.1 // indirect
 )
